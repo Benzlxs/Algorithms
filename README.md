@@ -1,2 +1,2 @@
 # Algorithms
-This repo is for algorithm practice
+This repo is for implimentating algorithm
