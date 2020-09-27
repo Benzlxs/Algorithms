@@ -32,7 +32,7 @@ def heap_sort(list_nums):
     n = len(list_nums)
 
     # travese each node, sortting each local binary tree
-	for i in range(n,-1,-1):
+    for i in range(n,-1,-1):
         heapify(list_nums, n, i)
 
     # Move the root of the max heap to the end, and start to swap each node
