@@ -1,6 +1,12 @@
 ## using dynamic programming to solve the minmum time of crossing bridge
 ## explaination: https://zhuanlan.zhihu.com/p/68228645
+"""
+有[公式]件物品和一个容量为[公式]的背包。第[公式]件物品的体积是[公式]，其价值是[公式]。
+求解，在不超过背包容量情况下，将哪些物品装入背包可使价值总和最大。
 
+
+用子问题定义状态：即 [公式] 表示前 [公式] 件物品恰放入一个容量为 [公式] 的背包可以获得的最大价值。则其状态转移方程便是：
+"""
 
 import os
 import fire

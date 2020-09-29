@@ -21,6 +21,8 @@ class Solution:
         order_dict  = []  # ordered
         if s in dic:
             return s
+
+        # sub-groups of words
         sub_sample = [[i] for i in dic]
 
         for i in range(1, len(s)):
