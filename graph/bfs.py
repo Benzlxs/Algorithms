@@ -1,6 +1,6 @@
 
 
-def bfs(node):
+def bfs_1(node):
     if node is None:
         return
     queue = []
@@ -14,6 +14,25 @@ def bfs(node):
             #if next not in nodeSet:     # 若邻接节点没有入过队，加入队列并登记
                 #nodeSet.add(next)
                 queue.insert(0,next)
+
+
+def bfs_0(node):
+    if node is None:
+        return
+    queue = []
+    #nodeSet = set()
+    queue.insert(0,node)
+    #nodeSet.add(node)
+    while queue:
+        next_level = []
+        for cur in queue:
+            print(cur.val)
+            if cur.left:
+                next_level.append(cur.left)
+            if cur.right:
+                next_level.append(cur.right)
+        queue = next_level
+
 
 
 #实现一个二叉树，并且用BFS或DFS去遍历她
@@ -49,4 +68,6 @@ littleTree(node_3, node_6, node_7)
 littleTree(node_4, node_8, node_9)
 littleTree(node_5, node_10, None)
 
-bfs(root_node)
+bfs_0(root_node)
+print('One more')
+bfs_1(root_node)
