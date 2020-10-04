@@ -28,7 +28,7 @@ import time
 
 
 
-
+# dynamic programming
 class Solution1:
     def __init__(self):
         self.all_combination = []
@@ -47,13 +47,15 @@ class Solution1:
         for i in range(1,string_len):
             for j in range(1,string_len):
                 if strings[i-1] == string_b[j-1]:
+                    # get value from diagnal
                     lsc[i][j] = lsc[i-1][j-1] +1
                 else:
+                    # get value from sides
                     lsc[i][j] = max(lsc[i][j-1], lsc[i-1][j])
         return len(strings) - lsc[string_len-1][string_len-1]
 
 
-
+## recursive
 class Solution2:
     def __init__(self):
         self.all_combination = []
