@@ -11,7 +11,6 @@ class Node:
         self.data = data
         self.left = None
         self.right = None
-
 def inOrderIterative(root):
     # Check for empty tree
     if root is None:
@@ -20,7 +19,6 @@ def inOrderIterative(root):
         while x:
             S.append(x)
             x = x.left
-
     stack = []
     while(True):
         visit(root, stack)

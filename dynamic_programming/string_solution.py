@@ -37,13 +37,11 @@ class Solution1:
         # write code here
         if not strings:
             return strings
-
         string_b = [i for i in reversed(strings)]
         string_len = len(strings)+1
         lsc = []
         for i in range(string_len):
             lsc.append([0]*string_len)
-
         for i in range(1,string_len):
             for j in range(1,string_len):
                 if strings[i-1] == string_b[j-1]:

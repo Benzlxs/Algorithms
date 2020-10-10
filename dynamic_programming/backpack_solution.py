@@ -24,14 +24,11 @@ class Solution:
     def package(self, weight, value, v):
         if len(weight)==0  or (v<0):
             return 0
-
         obj_len = len(weight)
-        # sub_opt = [[0]*(int(v))]*(len(weight)+1)  # worng way of doing
         # initializing
         sub_opt = []
         for i in range(obj_len+1):
             sub_opt.append([0]*v)
-
 
         for i in range(1, (obj_len+1)):
             for j in range(1, v):

@@ -10,7 +10,6 @@ class BST:
         self.root = Node(node_list[0])
         for data in node_list[1:]:
             self.insert(data)
-
     # 搜索
     def search(self, node, parent, data):
         if node is None:
@@ -21,7 +20,6 @@ class BST:
             return self.search(node.lchild, node, data)
         else:
             return self.search(node.rchild, node, data)
-
     # 插入
     def insert(self, data):
         flag, n, p = self.search(self.root, self.root, data)
@@ -31,7 +29,6 @@ class BST:
                 p.rchild = new_node
             else:
                 p.lchild = new_node
-
     # 删除
     def delete(self, root, data):
         flag, n, p = self.search(root, root, data)
@@ -64,22 +61,18 @@ class BST:
                     n.data = next.data
                     pre.lchild = next.rchild
                     del p
-
-
     # 先序遍历
     def preOrderTraverse(self, node):
         if node is not None:
             print(node.data)
             self.preOrderTraverse(node.lchild)
             self.preOrderTraverse(node.rchild)
-
     # 中序遍历
     def inOrderTraverse(self, node):
         if node is not None:
             self.inOrderTraverse(node.lchild)
             print(node.data)
             self.inOrderTraverse(node.rchild)
-
     # 后序遍历
     def postOrderTraverse(self, node):
         if node is not None:

@@ -19,7 +19,6 @@ def peek(stack):
 # A iterative function to do postorder traversal of
 # a given binary tree
 def postOrderIterative(root):
-
     # Check for empty tree
     if root is None:
         return
@@ -32,7 +31,6 @@ def postOrderIterative(root):
              stack.append(root)
              # Set root as root's left child
              root = root.left
-
         # Pop an item from stack and set it as root
         root = stack.pop()
         # If the popped item has a right child and the

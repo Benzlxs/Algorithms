@@ -16,13 +16,11 @@ class Solution:
     def __init__(self):
         self.all_combination = []
 
-
     def run(self, s, dic):
         order_dict  = []  # ordered
         if s in dic:
             return s
         sub_sample = [[i] for i in dic]
-
         for i in range(1, len(s)):
             if s[:i] not in dic:
                 for j in range(1,i):

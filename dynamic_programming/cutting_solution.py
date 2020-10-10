@@ -23,11 +23,9 @@ class Solution:
         local_optimal = [0, 0]
         for i in range(1,lens+1):
             q = -1
-
             for j in range(1,min(len(prices)+1,i+1)):
                 # iteration between optimal substructure
                 q = max(q, prices[j-1]+local_optimal[i-j+1])
-
             local_optimal.append(q)
         return local_optimal[-1]
 

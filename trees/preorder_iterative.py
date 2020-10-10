@@ -11,7 +11,6 @@ class Node:
         self.data = data
         self.left = None
         self.right = None
-
 def preOrderIterative(root):
     # Check for empty tree
     if root is None:
@@ -21,14 +20,12 @@ def preOrderIterative(root):
             ans.append(x.data)
             S.append(x.right)
             x = x.left
-
     stack = []
     while(True):
         visit(root, stack)
         if not stack:
             break
         root = stack.pop(-1)
-
 
 # Driver pogram to test above function
 root = Node(1)
