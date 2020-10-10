@@ -15,31 +15,21 @@ class Solution:
         self.cols = None
         self.dirs = [-1, 0, 1, 0, -1]
         self.count = 0
-
-
     def check(self, n):
         sum = 0
         while n:
             sum+= n%10
             n /= 10
-
         return sum
-
-
     def move_rob(self, u, v):
         if u < 0 or v<0 or u>= self.rows or v>= self.cols or self.mark[u][v]==1:
             return
-
         if (self.check(u) + self.check(v)) > self.threshold:
             return
-
         self.mark[u][v] = 1
         self.count += 1
-
         for i in range(4):
             self.move_rob(u+self.dirs[i], v+self.dirs[i+1])
-
-
     def movingCount(self, threshold, rows, cols):
         # write code here
         for i in range(rows):
@@ -48,7 +38,6 @@ class Solution:
         self.cols = cols
         self.threshold = threshold
         self.move_rob(0,0)
-
         # return sum([sum(vec) for vec in self.mark])
         return self.count
 

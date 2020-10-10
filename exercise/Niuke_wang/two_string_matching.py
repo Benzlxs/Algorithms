@@ -35,13 +35,11 @@ class Solution2:
         np = len(pattern)
         if ns == 0 or np == 0:
             return False
-
         # initialization
         f = []
         for i in range(ns):
             f.append([0 for j in range(np)])
         f[0][0] = 1
-
         # dynamic programming
         for i in range(ns):
             for j in range(1, np):
@@ -51,7 +49,6 @@ class Solution2:
                 else:
                     if j>=2:
                         f[i][j] =  f[i][j] or f[i][j-2]
-
                     if (i>=1 and j>=2 and ( s[i-1]==pattern[j-2] or pattern[j-2]=='.' )):
                         f[i][j] = f[i-1][j]
         return f[-1][-1]

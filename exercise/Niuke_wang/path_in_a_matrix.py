@@ -24,7 +24,6 @@ class Solution:
                     return True
         del visited
         return False
-
 	# recursive function
     def hasPathCore(self, matrix, path, rows, cols, row, col, visited, result, length):
         if result == path:

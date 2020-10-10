@@ -10,7 +10,6 @@ class Solution:
         # write code here
         return self.Symmetrical(pRoot, pRoot)
 
-
     def Symmetrical(self, pRoot1, pRoot2):
         if not pRoot1 and not pRoot2:
             return True

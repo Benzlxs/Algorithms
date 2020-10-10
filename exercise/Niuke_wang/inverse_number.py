@@ -55,6 +55,35 @@ class Solution:
         return ans % 1000000007
 
 
+def merge(left, right):
+    # merging two parts
+    sorted_list = []
+    left_idx = right_idx = 0
+    left_len, right_len = len(left), len(right)
+    c = 0
+    while (left_idx < left_len) and (right_idx < right_len):
+        if left[left_idx] <= right[right_idx]:
+            sorted_list.append(left[left_idx])
+            left_idx += 1
+        else:
+            sorted_list.append(right[right_idx])
+            right_idx += 1
+            c += left_len - left_idx
+    # merging together
+    sorted_list = sorted_list + left[left_idx:] + right[right_idx:]
+    return sorted_list, c
+
+def merge_sort(list_nums):
+    if len(list_nums) <= 1:
+        return list_nums, 0
+    mid = len(list_nums) // 2
+    left, lc = merge_sort(list_nums[:mid])
+    right, rc = merge_sort(list_nums[mid:])
+    merge_list, mc = merge(left, right)
+    return merge_list, (lc+rc+mc)
+
+
+
 if __name__=='__main__':
     inputs = [1,2,3,4,5,6,7,0,2,90,10]
     number = 13
@@ -62,8 +91,10 @@ if __name__=='__main__':
     t1 = time.time()
     input = 'aabc'
     #rs = jumpfloor(n)
+    _, resut22=merge_sort(inputs)
     test = Solution()
     result = test.InversePairs(inputs)
     #rs = numberof1(-4)
     print("Time: {}, Results: {}".format(time.time()-t1, result))
+    print("result2:{}".format(resut22))
 

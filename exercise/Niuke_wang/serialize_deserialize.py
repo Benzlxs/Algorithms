@@ -14,7 +14,6 @@ class Solution:
         self.preorder(root, valuelist)
         # 将结点值序列转化为一个字符串
         return ','.join(map(str, valuelist))
-
     def preorder(self, root, valuelist):
         if not root:
             # 对于空结点，返回#字符加以标识
@@ -23,13 +22,11 @@ class Solution:
         valuelist.append(root.val)
         self.preorder(root.left, valuelist)
         self.preorder(root.right, valuelist)
-
     # write code here
     def Deserialize(self, s):
         valuelist = s.split(',')
         root = self.preorderdes(valuelist)
         return root
-
     def preorderdes(self, valuelist):
         if len(valuelist) == 0 or valuelist[0] == '':
             return None

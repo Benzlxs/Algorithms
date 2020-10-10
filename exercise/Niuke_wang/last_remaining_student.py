@@ -12,8 +12,9 @@ import time
 
 
 class solution:
-    def run(self, n, m):
-        # write code here
+    def last_remaining_student(self, n, m):
+        # write code here, n: number of students
+        # m is randmo number
         if n<=0:
             return -1
         i_start = 0

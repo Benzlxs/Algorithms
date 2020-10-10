@@ -18,16 +18,13 @@ class solution:
         p5 = 0
         for i in range(1, n):
             new_ugly = min(ugly_list[p2]*2, ugly_list[p3]*3, ugly_list[p5]*5)
-
             if new_ugly%2 == 0:
                 p2 += 1
             if new_ugly%3 == 0:
                 p3 += 1
             if new_ugly%5 == 0:
                 p5 += 1
-
             ugly_list.append(new_ugly)
-
         return ugly_list[-1]
 
 
