@@ -17,27 +17,22 @@ def partition(nums, low, high):
         i += 1
         while nums[i] < pivot:
             i += 1
-
         j -= 1
         while nums[j] > pivot:
             j -= 1
-
         if i >= j:
             return j
-
         # If an element at i (on the left of the pivot) is larger than the
         # element at j (on right right of the pivot), then swap them
         nums[i], nums[j] = nums[j], nums[i]
 
 
 def quick_sort(list_nums):
-
     def _quick_sort(items, low, high):
         if low < high:
             split_index = partition(items, low, high)
             _quick_sort(items, low, split_index)
             _quick_sort(items, split_index + 1, high)
-
     _quick_sort(list_nums, 0, len(list_nums)-1)
 
 
